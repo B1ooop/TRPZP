@@ -23,5 +23,20 @@ namespace TRPZ.ViewModels
                 OnPropertyChanged(nameof(Login));
             }
         }
+
+        private string _password;
+
+        public string Password
+        {
+            get
+            {
+                return _password;
+            }
+            set
+            {
+                _password = value;
+                OnPropertyChanged(nameof(Password));
+            }
+        }
     }
 }

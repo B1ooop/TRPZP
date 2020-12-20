@@ -12,8 +12,8 @@
                 Padding="0,0,0,0" Margin="0,0,967,444"  Content="&#8678;" Click="Button_Click_Back"/>
         <Border MinWidth="300" MaxWidth="1000" Margin="20,80" >
             <StackPanel VerticalAlignment="Center">
-                <TextBox x:Name="login" Width="500px"  Foreground="#28a745" Margin="0,0,0,10" FontSize="26px" materialDesign:HintAssist.Hint="Login" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
-                <TextBox x:Name="password" Width="500px"  Foreground="#28a745" Margin="0,0,0,10" FontSize="26px" materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                <TextBox x:Name="login" Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}" Width="500px"  Foreground="#28a745" Margin="0,0,0,10" FontSize="26px" materialDesign:HintAssist.Hint="Login" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
+                <TextBox x:Name="password" Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}" Width="500px"  Foreground="#28a745" Margin="0,0,0,10" FontSize="26px" materialDesign:HintAssist.Hint="Password" Style="{StaticResource MaterialDesignFloatingHintTextBox}"></TextBox>
             </StackPanel>
         </Border>
         <Button Background="#333" Foreground="#28a745" FontSize="20px" Width="200" Height="60" BorderThickness="1" BorderBrush="#28a745" Margin="772,389,20,20"  Content="Sign in" Click="Button_Click_SignIn">

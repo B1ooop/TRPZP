@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TRPZ.Models;
+using TRPZ.ViewModels;
 
 
 namespace TRPZ
@@ -25,10 +26,14 @@ namespace TRPZ
         public string inputLogin;
         public string inputPassword;
         public static string transferLogin;
+        public LoginViewModel loginViewModel;
+
         public LoginWindow()
         {
             InitializeComponent();
             db = new DatebaseAppContext();
+            loginViewModel = new LoginViewModel();
+            this.DataContext = loginViewModel;
         }
 
         public static string getLogin()
@@ -48,8 +53,8 @@ namespace TRPZ
             {
                 bool invalidData = false;
                 List<Customer> customers = db.Customers.ToList();
-                inputLogin = login.Text.Trim();
-                inputPassword = password.Text.Trim();
+                inputLogin = loginViewModel.Login.Trim();
+                inputPassword = loginViewModel.Password.Trim();
 
                 // Ultra very bad validation
                 if (inputLogin.Length < 1 || inputPassword.Length < 1)
