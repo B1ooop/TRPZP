@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TRPZ.Commons;
 using TRPZ.Models;
 
 
@@ -38,9 +39,9 @@ namespace TRPZ
 
             //Пробросить поле из LoginWindow
             string currentCustomerlogin;
-            if (LoginWindow.getLogin() != "")
+            if (LoginCommand.transferLogin != "")
             {
-                currentCustomerlogin = LoginWindow.getLogin();
+                currentCustomerlogin = LoginCommand.transferLogin;
             }
             else
             {

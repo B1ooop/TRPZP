@@ -32,15 +32,9 @@ namespace TRPZ
         {
             InitializeComponent();
             db = new DatebaseAppContext();
-            loginViewModel = new LoginViewModel();
+            loginViewModel = new LoginViewModel(db, this);
             this.DataContext = loginViewModel;
         }
-
-        public static string getLogin()
-        {
-            return transferLogin;
-        }
-
         private void Button_Click_Back(object sender, RoutedEventArgs e)
         {
             MainWindow mw = new MainWindow();
@@ -50,53 +44,8 @@ namespace TRPZ
 
         private void Button_Click_SignIn(object sender, RoutedEventArgs e)
         {
-            {
-                bool invalidData = false;
-                List<Customer> customers = db.Customers.ToList();
-                inputLogin = loginViewModel.Login.Trim();
-                inputPassword = loginViewModel.Password.Trim();
-
-                // Ultra very bad validation
-                if (inputLogin.Length < 1 || inputPassword.Length < 1)
-                {
-                    if (inputLogin.Length < 1)
-                    {
-                        login.Background = Brushes.DarkRed;
-                    }
-                    else
-                    {
-                        login.Background = Brushes.Transparent;
-                    }
-                    if (inputPassword.Length < 1)
-                    {
-                        password.Background = Brushes.DarkRed;
-                    }
-                    else
-                    {
-                        password.Background = Brushes.Transparent;
-                    }
-                }
-                else
-                {
-                    foreach (Customer customer in customers)
-                    {
-                        if (customer.login == inputLogin && customer.password == inputPassword)
-                        {
-                            transferLogin = customer.login;
-                            invalidData = false;
-                            OrderWindow owLog = new OrderWindow();
-                            owLog.Show();
-                            this.Hide();
-                            break;
-                        }
-                        invalidData = true;
-                    }
-                    if (invalidData)
-                    {
-                        MessageBox.Show("Invalid Login or Password");
-                    }
-                }
-            }
+            
+            
         }
     }
 }

@@ -9,7 +9,7 @@ using TRPZ.Models;
 
 namespace TRPZ
 {
-    class DatebaseAppContext: DbContext
+    public class DatebaseAppContext: DbContext
     {
         public DbSet<Customer> Customers { get; set;}
         public DbSet<Product> Products { get; set; }
