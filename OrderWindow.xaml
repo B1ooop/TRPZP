@@ -1,0 +1,54 @@
+﻿<Window x:Class="TRPZ.OrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TRPZ"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="OrderWindow" Height="520" Width="1020">
+    <Grid Background="#333">
+        <Button Background="Transparent"  Foreground="#28a745" FontSize="50px" Height="Auto"  BorderThickness="0"  
+        Padding="0,0,0,0" Margin="0,0,907,396"  Content="&#8678;" Click="Button_Click_Back"/>
+        <Border MinWidth="300" MaxWidth="1000" Margin="16,75,16,63">
+            <StackPanel VerticalAlignment="Center">
+                <CheckBox x:Name="milk" FontSize="14px" Foreground="#28a745" IsThreeState="True" IsChecked="False"  Content="Milk" Margin="0,10,0,10" >
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.8" ScaleY="1.8" />
+                    </CheckBox.LayoutTransform>
+                    </CheckBox>
+                <CheckBox x:Name="cheese" FontSize="14px" Foreground="#28a745" IsThreeState="True" IsChecked="False"  Content="Cheese" Margin="0,0,0,10">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.8" ScaleY="1.8"/>
+                    </CheckBox.LayoutTransform>
+                </CheckBox>
+                <CheckBox x:Name="cottageCheese" FontSize="14px" Foreground="#28a745" IsThreeState="True" IsChecked="False"  Content="CottageCheese" Margin="0,0,0,10">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.8" ScaleY="1.8" />
+                    </CheckBox.LayoutTransform>
+                </CheckBox>
+                <CheckBox x:Name="potato" FontSize="14px" Foreground="#28a745" IsThreeState="True" IsChecked="False" Content="Potato" Margin="0,0,0,10">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.8" ScaleY="1.8" />
+                    </CheckBox.LayoutTransform>
+                </CheckBox>
+                <CheckBox x:Name="tomato" FontSize="14px" Foreground="#28a745" IsThreeState="True" IsChecked="False"  Content="Tomato" Margin="0,0,0,10">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.8" ScaleY="1.8" />
+                    </CheckBox.LayoutTransform>
+                </CheckBox>
+                <CheckBox x:Name="strawberry" FontSize="14px" Foreground="#28a745" IsThreeState="True" IsChecked="False"  Content="Strawberry" Margin="0,0,0,10">
+                    <CheckBox.LayoutTransform>
+                        <ScaleTransform ScaleX="1.8" ScaleY="1.8" />
+                    </CheckBox.LayoutTransform>
+                </CheckBox>
+            </StackPanel>
+        </Border>
+        <TextBlock x:Name="welcomeCustomer" Foreground="#28a745" FontSize="30px" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+        <Button  Background="#333" Foreground="#28a745" FontSize="20px" Width="170" Height="70" BorderThickness="1" BorderBrush="#28a745"  Content="Next" Margin="812,389,10,10" Click="Button_Click_Next" >
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="10" Color="#28a745" ShadowDepth="0"/>
+            </Button.Effect>
+        </Button>
+    </Grid>
+</Window>
