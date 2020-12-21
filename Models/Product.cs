@@ -1,21 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TRPZ.Models
+﻿namespace TRPZ.Models
 {
+    using System;
+
     public class Product
-    {       
-        public int id { get; private set; }
-        public string productName { get; private set; }
-        public int price { get; private set; }
+    {
+        public int Id { get; private set; }
+        public string ProductName { get; private set; }
+        public int Price { get; private set; }
 
         public Product(String productName, int price)
         {
-            this.productName = productName;
-            this.price = price;
+            this.ProductName = productName;
+            this.Price = price;
 
         }
 

@@ -1,18 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using TRPZ.Models;
-
 
 namespace TRPZ
 {
@@ -21,20 +8,19 @@ namespace TRPZ
     /// </summary>
     public partial class ConfirmWindow : Window
     {
-        Order currentOrder;
+        readonly Order currentOrder;
         public string[] orderedProducts;
-        private DatebaseAppContext db;
+        private readonly DatebaseAppContext db;
 
         public ConfirmWindow()
         {
             InitializeComponent();
             db = new DatebaseAppContext();
-            currentOrder = OrderWindow.getOrder();
-            orderedProducts = currentOrder.products.Split(' ');
-            productList.Text ="Order № " + currentOrder.id + "\nContains:\n" +  string.Join("\n", orderedProducts);
+            currentOrder = OrderWindow.GetOrder();
+            orderedProducts = currentOrder.Products.Split(' ');
+            productList.Text = "Order № " + currentOrder.Id + "\nContains:\n" + string.Join("\n", orderedProducts);
         }
 
-     
 
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
@@ -46,7 +32,7 @@ namespace TRPZ
         {
             foreach (Order order in db.Orders)
             {
-                if (order.id == currentOrder.id)
+                if (order.Id == currentOrder.Id)
                 {
                     db.Orders.Remove(order);
                     db.SaveChanges();

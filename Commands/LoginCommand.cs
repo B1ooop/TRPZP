@@ -1,21 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Media;
-using HumanResourcesDepartment.WPF.Comands;
-using TRPZ.Models;
-using TRPZ.ViewModels;
-
-namespace TRPZ.Commons
+﻿namespace TRPZ.Commons
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using System.Windows;
+    using HumanResourcesDepartment.WPF.Comands;
+    using TRPZ.Models;
+    using TRPZ.ViewModels;
+
     public class LoginCommand : AsyncCommandBase
     {
-        LoginViewModel loginViewModel;
-        DatebaseAppContext db;
-        LoginWindow lw;
+        readonly LoginViewModel loginViewModel;
+        readonly DatebaseAppContext db;
+        readonly LoginWindow lw;
         public static string transferLogin;
 
         public LoginCommand(LoginViewModel loginViewModel, DatebaseAppContext db, LoginWindow lw)
@@ -24,9 +21,10 @@ namespace TRPZ.Commons
             this.db = db;
             this.lw = lw;
         }
-        public async override Task ExecuteAsync(object parameter)
-        {
 
+        public async override Task ExecuteAsync(object parameter)
+
+        {
             bool invalidData = false;
             List<Customer> customers = db.Customers.ToList();
             var inputLogin = loginViewModel.Login.Trim();
@@ -44,8 +42,10 @@ namespace TRPZ.Commons
                     lw.Hide();
                     break;
                 }
+
                 invalidData = true;
             }
+
             if (invalidData)
             {
                 MessageBox.Show("Invalid Login or Password");

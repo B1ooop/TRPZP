@@ -18,7 +18,7 @@
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="1.8" ScaleY="1.8" />
                     </CheckBox.LayoutTransform>
-                    </CheckBox>
+                </CheckBox>
                 <CheckBox x:Name="cheese" FontSize="14px" Foreground="#28a745" IsThreeState="True" IsChecked="False"  Content="Cheese" Margin="0,0,0,10">
                     <CheckBox.LayoutTransform>
                         <ScaleTransform ScaleX="1.8" ScaleY="1.8"/>
@@ -54,7 +54,7 @@
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Setter Property="Background" Value="Transparent"/>
-                    
+
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="{x:Type Button}">

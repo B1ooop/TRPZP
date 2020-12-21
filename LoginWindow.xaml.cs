@@ -1,19 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using TRPZ.Models;
+﻿using System.Windows;
 using TRPZ.ViewModels;
-
 
 namespace TRPZ
 {
@@ -22,7 +8,7 @@ namespace TRPZ
     /// </summary>
     public partial class LoginWindow : Window
     {
-        DatebaseAppContext db;
+        readonly DatebaseAppContext db;
         public string inputLogin;
         public string inputPassword;
         public static string transferLogin;
@@ -43,9 +29,6 @@ namespace TRPZ
         }
 
         private void Button_Click_SignIn(object sender, RoutedEventArgs e)
-        {
-            
-            
-        }
+        { }
     }
 }

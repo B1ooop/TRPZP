@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using HumanResourcesDepartment.WPF.ViewModels;
-using TRPZ.Commons;
-
-namespace TRPZ.ViewModels
+﻿namespace TRPZ.ViewModels
 {
+    using System.Windows.Input;
+    using HumanResourcesDepartment.WPF.ViewModels;
+    using TRPZ.Commons;
+
     public class LoginViewModel: ViewModelBase
     {
         public ICommand LoginCommand { get; set; }

@@ -1,23 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-
-namespace HumanResourcesDepartment.WPF.Comands
+﻿namespace HumanResourcesDepartment.WPF.Comands
 {
+    using System;
+    using System.Threading.Tasks;
+    using System.Windows.Input;
+
     public abstract class AsyncCommandBase : ICommand
     {
-        private bool _isExecuting;
+        private bool isExecuting;
+
         public bool IsExecuting
         {
             get
             {
-                return _isExecuting;
+                return isExecuting;
             }
+
             set
             {
-                _isExecuting = value;
+                isExecuting = value;
                 CanExecuteChanged?.Invoke(this, new EventArgs());
             }
         }

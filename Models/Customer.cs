@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-
-namespace TRPZ.Models
+﻿namespace TRPZ.Models
 {
+    using System;
+
     public class Customer
     {
-        public int id {get; set;}
+        public int Id {get; set; }
         public string login, password, email, phone;
 
         public string Login
         {
-            get { return login;}
-            set { login = value;}
+            get { return login; }
+            set { login = value; }
         }
         public string Password
         {
