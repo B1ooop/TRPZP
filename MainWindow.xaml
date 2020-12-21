@@ -4,21 +4,83 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TRPZ"
+        xmlns:uc="clr-namespace:TRPZ"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Sign up / Sign in" Height="500" Width="1000">
+        Title="Sign up / Sign in" Height="520" Width="1020">
     <Grid Background="#333">
+        <uc:LogoBioUserControl Width="80" Height="80" Margin="902,10,10,379" RenderTransformOrigin="0.662,0.262"></uc:LogoBioUserControl>
         <StackPanel VerticalAlignment="Center">
-                    <Button Background="#333" Foreground="#28a745" FontSize="20px" MaxWidth="400" Height="70" BorderThickness="1" BorderBrush="#28a745" Margin="0, 0, 0, 50"  Content="Login" Click="Button_Click_Login">
-                        <Button.Effect>
-                        <DropShadowEffect BlurRadius="10" Color="#28a745" ShadowDepth="0"></DropShadowEffect>
-                        </Button.Effect>
-                    </Button>
-                <Button  Background="#333" Foreground="#28a745" FontSize="20px" MaxWidth="400" Height="70" BorderThickness="1" BorderBrush="#28a745"  Content="Register" Click="Button_Click_Register">
-                    <Button.Effect>
-                        <DropShadowEffect BlurRadius="10" Color="#28a745" ShadowDepth="0"></DropShadowEffect>
-                    </Button.Effect>
-                </Button>
+            <Button x:Name="btnLogin" BorderBrush="{x:Null}" Foreground="#28a745" FontSize="20px" MaxWidth="400" Height="70"  Margin="0, 0, 0, 50"  Content="Login" Click="Button_Click_Login">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Color="#28a745" ShadowDepth="0"></DropShadowEffect>
+                </Button.Effect>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="#28a745" BorderThickness="1">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="#28a745" Opacity="0.2"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="#28a745" Opacity="0.4"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button x:Name="btnPassword"  BorderBrush="{x:Null}" Foreground="#28a745" FontSize="20px" MaxWidth="400" Height="70" BorderThickness="1"  Content="Register" Click="Button_Click_Register">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="10" Color="#28a745" ShadowDepth="0"></DropShadowEffect>
+                </Button.Effect>
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="#28a745" BorderThickness="1">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="#28a745" Opacity="0.2"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <SolidColorBrush Color="#28a745" Opacity="0.4"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
         </StackPanel>
     </Grid>
 </Window>
