@@ -1,19 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using TRPZ.Commons;
 using TRPZ.Models;
-
 
 namespace TRPZ
 {
@@ -22,13 +11,13 @@ namespace TRPZ
     /// </summary>
     public partial class OrderWindow : Window
     {
-        DatebaseAppContext db;
+        readonly DatebaseAppContext db;
         string orderedProducts = "";
         float totalPrice = 0;
-        Customer currentCustomer;
+        readonly Customer currentCustomer;
         public static Order transferOrder;
 
-        public  static  Order getOrder()
+        public static Order GetOrder()
         {
             return transferOrder;
         }
@@ -37,7 +26,7 @@ namespace TRPZ
             InitializeComponent();
             db = new DatebaseAppContext();
 
-            //Пробросить поле из LoginWindow
+            // Пробросить поле из LoginWindow
             string currentCustomerlogin;
             if (LoginCommand.transferLogin != "")
             {
@@ -47,11 +36,11 @@ namespace TRPZ
             {
                 currentCustomerlogin = RegisterWindow.getLogin();
             }
-           
-            
-            //Вывести имя текущего пользователя
+
+
+            // Вывести имя текущего пользователя
             List<Customer> customers = db.Customers.ToList();
-            welcomeCustomer.Text = "Welcome, please choose products to order" ;
+            welcomeCustomer.Text = "Welcome, please choose products to order";
             foreach (Customer customer in customers)
             {
                 if (customer.login == currentCustomerlogin)
@@ -75,36 +64,36 @@ namespace TRPZ
 
             if (milk.IsChecked == true)
             {
-                orderedProducts += pr[0].productName + " ";
-                totalPrice += pr[0].price;
+                orderedProducts += pr[0].ProductName + " ";
+                totalPrice += pr[0].Price;
             }
             if (cheese.IsChecked == true)
             {
-                orderedProducts += pr[1].productName + " ";
-                totalPrice += pr[1].price;
+                orderedProducts += pr[1].ProductName + " ";
+                totalPrice += pr[1].Price;
             }
             if (cottageCheese.IsChecked == true)
             {
-                orderedProducts += pr[2].productName + " ";
-                totalPrice += pr[2].price;
+                orderedProducts += pr[2].ProductName + " ";
+                totalPrice += pr[2].Price;
             }
             if (potato.IsChecked == true)
             {
-                orderedProducts += pr[3].productName + " ";
-                totalPrice += pr[3].price;
+                orderedProducts += pr[3].ProductName + " ";
+                totalPrice += pr[3].Price;
             }
             if (tomato.IsChecked == true)
             {
-                orderedProducts += pr[4].productName + " ";
-                totalPrice += pr[4].price;
+                orderedProducts += pr[4].ProductName + " ";
+                totalPrice += pr[4].Price;
             }
             if (strawberry.IsChecked == true)
             {
-                orderedProducts += pr[5].productName + " ";
-                totalPrice += pr[5].price;
+                orderedProducts += pr[5].ProductName + " ";
+                totalPrice += pr[5].Price;
             }
 
-            Order order = new Order(currentCustomer.id, orderedProducts, totalPrice);
+            Order order = new Order(currentCustomer.Id, orderedProducts, totalPrice);
             db.Orders.Add(order);
             db.SaveChanges();
             transferOrder = order;

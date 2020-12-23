@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Text;
-
-namespace HumanResourcesDepartment.WPF.ViewModels
+﻿namespace HumanResourcesDepartment.WPF.ViewModels
 {
+    using System.ComponentModel;
+
     public class ViewModelBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
